@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import List from './List'
 import SmallComponent from './SmallComponent'
+import Immutable from 'immutable'
+
+
 class App extends Component {
   constructor(props){
     super(props)
-    var labels = []
+    var _labels = []
     for (var i = 0; i < 10000; i++) {
-      labels.push("abc" + i);
+      _labels.push("abc" + i);
     }
+    var labels = Immutable.List(_labels)
     var width = "100%"
     this.state = {labels,width}
     
@@ -16,17 +20,17 @@ class App extends Component {
     var newLabels = this.state.labels.map((label,i) => 
       i%2 === 0?label:"new"+i
     );
-
-    this.setState({labels:newLabels})
+    this.setState({labels:Immutable.List(newLabels)})
   }
   handleHigh(){
     this.setState({width: "50%"})
   }
   handleReset(){
-    var labels = []
+    var _labels = []
     for (var i = 0; i < 10000; i++) {
-      labels.push("abc" + i);
+      _labels.push("abc" + i);
     }
+    var labels = Immutable.List(_labels)
     var width = "100%"
     this.setState({labels,width})
   }

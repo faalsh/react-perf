@@ -2,22 +2,21 @@
   "name": "react-perf",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "express": "^4.14.0",
     "express-history-api-fallback": "^2.1.0",
+    "immutable": "^3.8.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-scripts": "0.8.4"
   },
   "scripts": {
     "startdev": "react-scripts start",
-    "start":"node server.js",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "postinstall":"react-scripts build"
+    "postinstall": "react-scripts build"
   }
 }
